@@ -1,0 +1,8 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.run": ["onSave", "onType"],
+  "eslint.codeAction.showDocumentation": false,
+  "eslint.format.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript"],
+  "prettier.eslintIntegration": true
+}
