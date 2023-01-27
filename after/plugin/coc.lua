@@ -1,0 +1,15 @@
+-- vim.g.coc_global_extensions = [
+--    'coc-json',
+--    'coc-tsserver',
+--    'coc-css',
+--    'coc-tabnine',
+--    'coc-word',
+--    'coc-yank',
+--    'coc-jest',
+--    'coc-pairs',
+--    'coc-snippets',
+--    'coc-smartf',
+--    'coc-fzf-preview',
+--    'coc-browser',
+--    'coc-jsref',
+--    ]

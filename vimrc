@@ -16,8 +16,8 @@ let g:coc_global_extensions = [
   \ 'coc-fzf-preview',
   \ 'coc-browser',
   \ 'coc-jsref',
+  \ 'coc-sumneko-lua',
   \ ]
-"
 
 
 syntax enable
@@ -66,14 +66,14 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
-set runtimepath+=~/.vim/plugged/tern_for_vim/
 let g:coc_node_path = '/Users/nickprokesch/.nvm/versions/node/v16.8.0/bin/node'
 let g:node_host_prog = '/Users/nickprokesch/.nvm/versions/node/v16.8.0/bin/node'
 
 let mapleader = "\<Space>"
 
 " colorscheme solarized8
-colorscheme aurora
+" colorscheme aurora
+colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -93,24 +93,25 @@ augroup json_autocmd
   " autocmd FileType json set foldmethod=syntax
 augroup END
 
+"-- FOLDING --
+set foldmethod=syntax "syntax highlighting items specify folds
+set foldcolumn=1 "defines 1 col at window left, to indicate folding
+let javaScript_fold=1 "activate folding by JS syntax
+set foldlevelstart=99 "start file with all folds opened
+
 map <F7> gg=G<C-o><C-o>
 " vnoremap <leader>G "hy:Ag "<C-r>h"<CR>
-nnoremap <leader>G :exe 'Ag!' expand('<cword>')<cr>
+nnoremap <leader>G :exe 'Rg!' expand('<cword>')<cr>
 
 :command Thtml :%!tidy -q -i --show-errors 0
 :command Txml  :%!tidy -q -i --show-errors 0 -xml
 
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+" nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " make test commands execute using dispatch.vim
-let test#strategy = "tslime"
-let g:EasyClipAutoFormat = 1
-let g:EasyClipUseSubstituteDefaults = 1
-let g:asyncrun_open = 40
 let g:colorizer_auto_color = 1
 let g:import_sort_auto = 1
 let g:jsx_ext_required = 0
-" let g:python3_host_prog='/home/linuxbrew/.linuxbrew/bin/python3'
 let g:xml_syntax_folding = 0
 let g:test#javascript#jest#file_pattern = '\v(__tests__/.*|(spec|test|Test))\.(js|jsx|coffee|ts|tsx)$'
 
@@ -119,10 +120,10 @@ command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
 
 " Run jest for current file
 command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
-nnoremap <leader>tf :call  CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+nnoremap <leader>jf :call  CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
 
 " Run jest for current test
-nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
+nnoremap <leader>je :call CocAction('runCommand', 'jest.singleTest')<CR>
 
 " Init jest in current cwd, require global jest command exists
 command! JestInit :call CocAction('runCommand', 'jest.init')
@@ -146,7 +147,7 @@ let g:coc_snippet_next = '<tab>'
 :command W w
 :command Q q
 
-nmap ga <Plug>(coc-codeaction-cursor)
+
 xmap ga <Plug>(coc-codeaction-selected)
 
 
@@ -155,45 +156,15 @@ if exists('+macmeta')
   setglobal macmeta
 endif
 setglobal winaltkeys=no
-let g:tslime_always_current_session = 1
-let g:tslime_always_current_window = 1
-let g:shtuff_receiver = 'devrunner'
-" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-" nmap <silent> d<C-g> :Dispatch! gulp<CR>
-" nmap <silent> D<C-g> :Dispatch gulp<CR>
-" nmap <silent> d<C-b> :Dispatch! browserify %:p ./dist/scripts/%:t -t babelify -p tinyify --fast<CR>
-" nmap <silent> D<C-b> :Dispatch browserify %:p ./dist/scripts/%:t -t babelify -p tinyify --fast<CR>
-
-
-
-inoremap <M-o>      <C-O>o
-inoremap <M-O>      <C-O>O
-inoremap <M-i>      <Left>
-inoremap <M-I>      <C-O>^
-inoremap <M-A>      <C-O>$
-inoremap <C-J>      <Down>
-inoremap <C-K><C-K> <Up>
 
 nnoremap <silent> <C-w>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 nnoremap <silent> <C-w>Q :tabclose<CR>
 nnoremap <silent> <C-w>. :if exists(':Wcd')<Bar>exe 'Wcd'<Bar>elseif exists(':Lcd')<Bar>exe 'Lcd'<Bar>elseif exists(':Glcd')<Bar>exe 'Glcd'<Bar>else<Bar>lcd %:h<Bar>endif<CR>
 nmap cd <C-W>.
 
-command! -bar -nargs=0 Bigger  :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
-command! -bar -nargs=0 Smaller :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
-nnoremap <M-,>        :Smaller<CR>
-nnoremap <M-.>        :Bigger<CR>
-nnoremap <M-9>        :Smaller<CR>
-nnoremap <M-0>        :Bigger<CR>
-
 setglobal grepformat=%f:%l:%c:%m,%f:%l:%m,%f:%l%m,%f\ \ %l%m
-if executable('ag')
-  setglobal grepprg=ag\ -s\ --vimgrep
+if executable('rg')
+  setglobal grepprg=rg\ -s\ --vimgrep
 elseif has('unix')
   setglobal grepprg=grep\ -rn\ $*\ /dev/null
 endif
@@ -264,15 +235,14 @@ nnoremap <bs> <c-w>W
 noremap <C-P> :CocCommand fzf-preview.GitFiles<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>f :CocCommand fzf-preview.ProjectMruFiles<CR>
-noremap <leader>ff :AsyncRun -post=checktime npm run lint --fix %<CR>
 noremap <leader>u :PackerUpdate<CR>
 noremap <leader>v :so ~/.vimrc<CR>
 noremap <leader>w :w<CR>
 noremap <leader>a :Gwrite<CR>
 noremap <leader>s :Snippets<CR>
-noremap <leader>g :CocCommand fzf-preview.ProjectGrep
-
-" press <esc> to cancel.
+" noremap <leader>g :CocCommand fzf-preview.ProjectGrep
+"
+" " press <esc> to cancel.
 nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
 nmap ; <Plug>(coc-smartf-repeat)

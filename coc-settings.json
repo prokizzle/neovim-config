@@ -1,8 +1,9 @@
 {
   "eslint.autoFixOnSave": true,
-  "eslint.run": ["onSave", "onType"],
+  "eslint.run": "onType",
   "eslint.codeAction.showDocumentation": false,
   "eslint.format.enable": true,
   "coc.preferences.formatOnSaveFiletypes": ["css", "javascript"],
-  "prettier.eslintIntegration": true
+  "Lua.telemetry.enable": true,
+  "jest.customFlags": ["env=jsdom"]
 }
