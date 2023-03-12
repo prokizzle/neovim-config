@@ -15,41 +15,18 @@ augroup end
 
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
-	-- LSP support
-	--   use({
-	--     "glepnir/lspsaga.nvim",
-	--     branch = "main",
-	--     config = function()
-	--         local saga = require("lspsaga")
-	--
-	--         saga.init_lsp_saga({
-	--             -- your configuration
-	--         })
-	--     end,
-	-- })
-	--   use {
-	--     'VonHeikemen/lsp-zero.nvim',
-	--     requires = {
-	--       -- LSP Support
-	--       {'neovim/nvim-lspconfig'},
-	--       {'williamboman/mason.nvim'},
-	--       {'williamboman/mason-lspconfig.nvim'},
-	--
-	--       -- Autocompletion
-	--       {'hrsh7th/nvim-cmp'},
-	--       {'hrsh7th/cmp-buffer'},
-	--       {'hrsh7th/cmp-path'},
-	--       {'saadparwaiz1/cmp_luasnip'},
-	--       {'hrsh7th/cmp-nvim-lsp'},
-	--       {'hrsh7th/cmp-nvim-lua'},
-	--       {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'},
-	--
-	--
-	--       -- Snippets
-	--       {'L3MON4D3/LuaSnip'},
-	--       {'rafamadriz/friendly-snippets'},
-	--     }
-	--   }
+
+  use { "nathom/filetype.nvim" } -- speed up filetype detection
+  use { "machakann/vim-sandwich" } -- Surround objects with any character e.g. saiw|sdb|srb"
+  use { "romainl/vim-qf" } -- Better work with quickfix
+    use { "mbbill/undotree" } -- Undotree
+    use {
+        "goolord/alpha-nvim", -- Startup screen
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = function()
+            require "config.alpha"
+        end,
+    }
 
 	use({
 		"windwp/nvim-autopairs",
@@ -57,16 +34,11 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	use("airblade/vim-gitgutter")
-	use("ap/vim-css-color")
-	use("chrisbra/Colorizer")
-	use("csscomb/vim-csscomb")
-	use("easymotion/vim-easymotion")
+	use({
+		"lewis6991/gitsigns.nvim",
+		-- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+	})
 	use("editorconfig/editorconfig-vim")
-	use("galooshi/vim-import-js")
-	use("haya14busa/incsearch-easymotion.vim")
-	use("haya14busa/incsearch-fuzzy.vim")
-	use("haya14busa/incsearch.vim")
 	use("honza/vim-snippets")
 	use({
 		"nvim-neotest/neotest",
@@ -76,46 +48,95 @@ return require("packer").startup(function(use)
 			"antoinemadec/FixCursorHold.nvim",
 		},
 	})
-	use("jeffkreeftmeijer/vim-numbertoggle")
 	use("justinmk/vim-sneak")
 	use({ "junegunn/fzf", dir = "~/.fzf", run = "./install --all" })
-	use({ "yuki-yano/fzf-preview.vim", branch = "release/rpc" })
+	-- use({ "yuki-yano/fzf-preview.vim", branch = "release/rpc" })
 	use("junegunn/fzf.vim")
-	use("nathanaelkane/vim-indent-guides")
-	use({ "neoclide/coc.nvim", branch = "release" })
+	-- use({ "neoclide/coc.nvim", branch = "release" })
 	use("reedes/vim-wheel")
-	use("reinh/vim-makegreen")
-	use("ruanyl/vim-fixmyjs")
+	-- use("ruanyl/vim-fixmyjs")
 	-- use 'sheerun/vim-polyglot'
 	use("styled-components/vim-styled-components")
-	use("tomtom/tcomment_vim")
-	use("tpope/vim-abolish")
-	use("tpope/vim-dispatch")
-	use("tpope/vim-eunuch")
 	use("tpope/vim-fugitive")
-	use("tpope/vim-obsession")
 	use("tpope/vim-repeat")
 	use("tpope/vim-rhubarb")
 	use("tpope/vim-sensible")
-	use("tpope/vim-surround")
 	use("tpope/vim-unimpaired")
 	use("tpope/vim-vinegar")
-	use("w0rp/ale")
-	use("xolox/vim-misc")
-	use("jgdavey/tslime.vim")
 	use("christoomey/vim-tmux-navigator")
-	use("SirVer/ultisnips")
 	use("nvim-tree/nvim-web-devicons")
-	use("lewis6991/impatient.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
+
+	use({ "williamboman/mason.nvim" })
+	use("nanozuki/tabby.nvim")
+
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	use("MunifTanjim/prettier.nvim")
+  use { 'mhartington/formatter.nvim' }
 	-- use({
 	-- 	"nvim-lualine/lualine.nvim",
 	-- 	requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	-- })
 	use({ "rcarriga/nvim-notify", config = "vim.notify = require('notify')" })
+  -- Lua
+use {
+  "folke/trouble.nvim",
+  requires = "nvim-tree/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v1.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig",
+    }, -- Required
 
+			{ "williamboman/mason.nvim" }, -- Optional
+			{
+				"williamboman/mason-lspconfig.nvim",
+			}, -- Optional
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "hrsh7th/cmp-buffer" }, -- Optional
+			{ "hrsh7th/cmp-path" }, -- Optional
+			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
+			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
+			{ "tzachar/cmp-tabnine", run = "./install.sh" },
+			"folke/lua-dev.nvim",
+			"RRethy/vim-illuminate",
+			"jose-elias-alvarez/null-ls.nvim",
+			{
+				"j-hui/fidget.nvim",
+				config = function()
+					require("fidget").setup({})
+				end,
+			},
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" }, -- Required
+			{ "rafamadriz/friendly-snippets" }, -- Optional
+		},
+	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -124,8 +145,11 @@ return require("packer").startup(function(use)
 			"kkharji/sqlite.lua",
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzy-native.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
+			"xiyaowong/telescope-emoji.nvim",
 		},
 		cmd = "Telescope",
+		module = "telescope",
 	})
 	use({
 		"folke/which-key.nvim",
@@ -137,35 +161,10 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-	use({
-		"pwntester/octo.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("octo").setup()
-		end,
-	})
 
-	use({
-		"LukasPietzschmann/telescope-tabs",
-		requires = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("telescope-tabs").setup({
-				-- Your custom config :^)
-			})
-		end,
-	})
+	use({ "MaximilianLloyd/adjacent.nvim", requires = { "lewis6991/impatient.nvim" } })
 
-	use({ "nvim-telescope/telescope-file-browser.nvim" })
-	use({ "MaximilianLloyd/adjacent.nvim" })
-	use({ "fannheyward/telescope-coc.nvim" })
-
-	use({ "xiyaowong/telescope-emoji.nvim" })
-
-	use({ "vimwiki/vimwiki" })
+	-- use({ "vimwiki/vimwiki" })
 	use({
 		"folke/zen-mode.nvim",
 		config = function()
@@ -177,21 +176,22 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "ellisonleao/dotenv.nvim" })
-	use("asiryk/auto-hlsearch.nvim")
+	-- use("asiryk/auto-hlsearch.nvim")
 	use({
 		"lewis6991/spaceless.nvim",
 		config = function()
 			require("spaceless").setup()
 		end,
 	})
---   use({
---     'rose-pine/neovim',
---     as = 'rose-pine',
---     config = function()
---         require("rose-pine").setup()
---         vim.cmd('colorscheme rose-pine')
---     end
--- })
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
