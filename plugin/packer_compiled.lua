@@ -74,40 +74,67 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  Colorizer = {
+  ["Comment.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/Colorizer",
-    url = "https://github.com/chrisbra/Colorizer"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
   },
   ["FixCursorHold.nvim"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["adjacent.nvim"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/adjacent.nvim",
     url = "https://github.com/MaximilianLloyd/adjacent.nvim"
   },
-  ale = {
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17config.alpha\frequire\0" },
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/ale",
-    url = "https://github.com/w0rp/ale"
-  },
-  ["auto-hlsearch.nvim"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/auto-hlsearch.nvim",
-    url = "https://github.com/asiryk/auto-hlsearch.nvim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
   },
   catppuccin = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
-  ["coc.nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dotenv.nvim"] = {
     loaded = true,
@@ -119,15 +146,31 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
     url = "https://github.com/editorconfig/editorconfig-vim"
   },
+  ["fidget.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0" },
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["filetype.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/filetype.nvim",
+    url = "https://github.com/nathom/filetype.nvim"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   fzf = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
-  },
-  ["fzf-preview.vim"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/fzf-preview.vim",
-    url = "https://github.com/yuki-yano/fzf-preview.vim"
   },
   ["fzf.vim"] = {
     loaded = true,
@@ -139,30 +182,50 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/fzy-lua-native",
     url = "https://github.com/romgrk/fzy-lua-native"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
-  ["incsearch-easymotion.vim"] = {
+  ["lsp-zero.nvim"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/incsearch-easymotion.vim",
-    url = "https://github.com/haya14busa/incsearch-easymotion.vim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
-  ["incsearch-fuzzy.vim"] = {
+  ["lua-dev.nvim"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/incsearch-fuzzy.vim",
-    url = "https://github.com/haya14busa/incsearch-fuzzy.vim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/lua-dev.nvim",
+    url = "https://github.com/folke/lua-dev.nvim"
   },
-  ["incsearch.vim"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/incsearch.vim",
-    url = "https://github.com/haya14busa/incsearch.vim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   neotest = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/neotest",
     url = "https://github.com/nvim-neotest/neotest"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
@@ -170,11 +233,27 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-notify"] = {
     config = { "vim.notify = require('notify')" },
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
+  },
+  ["nvim-surround"] = {
+    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -186,12 +265,6 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["octo.nvim"] = {
-    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0" },
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/octo.nvim",
-    url = "https://github.com/pwntester/octo.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -201,6 +274,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["spaceless.nvim"] = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14spaceless\frequire\0" },
@@ -218,15 +296,10 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/stylua-nvim",
     url = "https://github.com/ckipp01/stylua-nvim"
   },
-  tcomment_vim = {
+  ["tabby.nvim"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/tcomment_vim",
-    url = "https://github.com/tomtom/tcomment_vim"
-  },
-  ["telescope-coc.nvim"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
-    url = "https://github.com/fannheyward/telescope-coc.nvim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/tabby.nvim",
+    url = "https://github.com/nanozuki/tabby.nvim"
   },
   ["telescope-emoji.nvim"] = {
     loaded = true,
@@ -248,12 +321,6 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
   },
-  ["telescope-tabs"] = {
-    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19telescope-tabs\frequire\0" },
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/telescope-tabs",
-    url = "https://github.com/LukasPietzschmann/telescope-tabs"
-  },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
     loaded = false,
@@ -262,90 +329,31 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tslime.vim"] = {
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0" },
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/tslime.vim",
-    url = "https://github.com/jgdavey/tslime.vim"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
-  ultisnips = {
+  undotree = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/ultisnips",
-    url = "https://github.com/SirVer/ultisnips"
-  },
-  ["vim-abolish"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-abolish",
-    url = "https://github.com/tpope/vim-abolish"
-  },
-  ["vim-css-color"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-css-color",
-    url = "https://github.com/ap/vim-css-color"
-  },
-  ["vim-csscomb"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-csscomb",
-    url = "https://github.com/csscomb/vim-csscomb"
-  },
-  ["vim-dispatch"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-dispatch",
-    url = "https://github.com/tpope/vim-dispatch"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
-  },
-  ["vim-eunuch"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-eunuch",
-    url = "https://github.com/tpope/vim-eunuch"
-  },
-  ["vim-fixmyjs"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-fixmyjs",
-    url = "https://github.com/ruanyl/vim-fixmyjs"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-gitgutter"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
-  ["vim-import-js"] = {
+  ["vim-qf"] = {
     loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-import-js",
-    url = "https://github.com/galooshi/vim-import-js"
-  },
-  ["vim-indent-guides"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-indent-guides",
-    url = "https://github.com/nathanaelkane/vim-indent-guides"
-  },
-  ["vim-makegreen"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-makegreen",
-    url = "https://github.com/reinh/vim-makegreen"
-  },
-  ["vim-misc"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-misc",
-    url = "https://github.com/xolox/vim-misc"
-  },
-  ["vim-numbertoggle"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-numbertoggle",
-    url = "https://github.com/jeffkreeftmeijer/vim-numbertoggle"
-  },
-  ["vim-obsession"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-obsession",
-    url = "https://github.com/tpope/vim-obsession"
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-qf",
+    url = "https://github.com/romainl/vim-qf"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -356,6 +364,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
+  },
+  ["vim-sandwich"] = {
+    loaded = true,
+    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-sandwich",
+    url = "https://github.com/machakann/vim-sandwich"
   },
   ["vim-sensible"] = {
     loaded = true,
@@ -377,11 +390,6 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-styled-components",
     url = "https://github.com/styled-components/vim-styled-components"
   },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
-  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -402,11 +410,6 @@ _G.packer_plugins = {
     path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vim-wheel",
     url = "https://github.com/reedes/vim-wheel"
   },
-  vimwiki = {
-    loaded = true,
-    path = "/Users/nickprokesch/.local/share/nvim/site/pack/packer/start/vimwiki",
-    url = "https://github.com/vimwiki/vimwiki"
-  },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
     loaded = true,
@@ -422,34 +425,74 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: telescope-tabs
-time([[Config for telescope-tabs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19telescope-tabs\frequire\0", "config", "telescope-tabs")
-time([[Config for telescope-tabs]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
-time([[Config for octo.nvim]], false)
+local module_lazy_loads = {
+  ["^telescope"] = "telescope.nvim"
+}
+local lazy_load_called = {['packer.load'] = true}
+local function lazy_load_module(module_name)
+  local to_load = {}
+  if lazy_load_called[module_name] then return nil end
+  lazy_load_called[module_name] = true
+  for module_pat, plugin_name in pairs(module_lazy_loads) do
+    if not _G.packer_plugins[plugin_name].loaded and string.match(module_name, module_pat) then
+      to_load[#to_load + 1] = plugin_name
+    end
+  end
+
+  if #to_load > 0 then
+    require('packer.load')(to_load, {module = module_name}, _G.packer_plugins)
+    local loaded_mod = package.loaded[module_name]
+    if loaded_mod then
+      return function(modname) return loaded_mod end
+    end
+  end
+end
+
+if not vim.g.packer_custom_loader_enabled then
+  table.insert(package.loaders, 1, lazy_load_module)
+  vim.g.packer_custom_loader_enabled = true
+end
+
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: spaceless.nvim
-time([[Config for spaceless.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14spaceless\frequire\0", "config", "spaceless.nvim")
-time([[Config for spaceless.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17config.alpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-notify
 time([[Config for nvim-notify]], true)
 vim.notify = require('notify')
 time([[Config for nvim-notify]], false)
+-- Config for: spaceless.nvim
+time([[Config for spaceless.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14spaceless\frequire\0", "config", "spaceless.nvim")
+time([[Config for spaceless.nvim]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
