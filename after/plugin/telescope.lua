@@ -14,7 +14,7 @@ end)
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>tf",
-	"<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
+	"<Cmd>lua require('telescope').extensions.frecency.frecency({workspace = 'CWD'})<CR>",
 	{ noremap = true, silent = true }
 )
 vim.keymap.set("n", "<leader>te", "<Cmd>Telescope emoji<cr>")
@@ -32,9 +32,8 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("adjacent")
-require("telescope").load_extension("coc")
+-- require("telescope").load_extension("coc")
 require("telescope").load_extension("emoji")
 require("telescope").load_extension("file_browser")
-require("telescope").load_extension("frecency")
 require("telescope").load_extension("frecency")
 require("telescope").load_extension("fzy_native")
